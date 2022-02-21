@@ -77,10 +77,16 @@ class TestUser(unittest.TestCase):
         test_user = User("Test","user","0111222333", "test@user.com")
         test_user.save_user()
 
-        found_
 
         found_user = User.find_by_number("0111222333")
-        self.assertEqual(found_user.email,test_user.email)                    
- 
+        self.assertEqual(found_user.email,test_user.email)
 
- 
+    def test_contact_exists(self)
+        '''
+        checks if a user exists from the user_list
+        '''
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return True
+
+        return False

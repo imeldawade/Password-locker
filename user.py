@@ -23,9 +23,18 @@ def save_user(self):
     User.user_list.append(self)
 
 @classmethod
-def user_exists(cls,number)
+def find_by_nuber(cls,number):
     '''
-    checks if user exits from the user list
+    takes in a number and returns a user that matches number
+    '''
+    for user in cls.user_list:
+        if user.phone_number == number:
+            return user
+
+@classmethod
+def user_exist(cls,number):
+    '''
+    checks if a user exists from the user list
     '''
     for user in cls.user_list:
         if user.phone_number == number:
