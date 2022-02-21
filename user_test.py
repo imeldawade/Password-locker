@@ -5,6 +5,26 @@ class TestUser(unittest.TestCase):
 
     def setUp(self):
         '''
-        test runs before every test occurs
+        test runs before each test cases
         '''
-        self.new_user = User("Imelda", "wade", "0712345678", "test@user.com",)
+        self.new_user = User("Imelda", "wade", "0712345678", "wade@user.com",)
+
+    def test_init(self):
+         '''
+         test case to test if the object is initialized
+         '''
+
+         self.assertEqual(self.new_user.first_name,"Imelda")
+         self.assertEqual(self.new_user.last_name,"Wade")
+         self.assertEqual(self.new_user.phone_number,"0712345678")
+         self.assertEqual(self.new_user.email,"wade@user.com")
+
+    def test_save_user(self):
+        '''
+        test case to test if the save function works
+        '''
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)     
+ 
+
+ 
