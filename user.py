@@ -12,4 +12,13 @@ class User:
         self.phone_number = phone_number
         self.email = email
 
-        
+user_list = []
+
+def save_user(self):
+
+    '''
+    save_user method saves user objects into user_list
+    '''
+
+    User.user_list.append(self)
+
