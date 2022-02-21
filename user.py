@@ -23,7 +23,7 @@ def save_user(self):
     User.user_list.append(self)
 
 @classmethod
-def find_by_nuber(cls,number):
+def find_by_number(cls,number):
     '''
     takes in a number and returns a user that matches number
     '''

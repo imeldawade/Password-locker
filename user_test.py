@@ -81,7 +81,7 @@ class TestUser(unittest.TestCase):
         found_user = User.find_by_number("0111222333")
         self.assertEqual(found_user.email,test_user.email)
 
-    def test_contact_exists(self)
+    def test_contact_exists(self):
         '''
         checks if a user exists from the user_list
         '''
@@ -90,3 +90,11 @@ class TestUser(unittest.TestCase):
                 return True
 
         return False
+
+    def test_display_all_users(self):
+        '''
+        returns a list of all users saved
+        '''
+        self.assertEqual(User.display_users(),User.user_list)
+               
+
