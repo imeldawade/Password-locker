@@ -49,7 +49,38 @@ class TestUser(unittest.TestCase):
         test_user = User("Test", "user", "0712345678", "test@user.com")
         test_user.save_user()
         self.assertEqual(len(User.user_list)2)
-            
+
+    def test_delete_user(self):
+        '''
+        test that checks the delete function
+        '''
+        self.new_user.save_user()
+        test_user = User("Test", "user", "0712345678", "test@user.com")
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list),1)
+
+    def delete_user(self):
+        '''
+        deletes a saved user from the user_list
+        '''
+
+        User.user_list.remove(self)
+
+    def test_find_user_by_number(self):
+        '''
+        checks if we can find user by phone number and display information
+        '''
+
+        self.new_User.save_user()
+        test_user = User("Test","user","0111222333", "test@user.com")
+        test_user.save_user()
+
+        found_
+
+        found_user = User.find_by_number("0111222333")
+        self.assertEqual(found_user.email,test_user.email)                    
  
 
  

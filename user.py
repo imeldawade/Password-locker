@@ -22,3 +22,13 @@ def save_user(self):
 
     User.user_list.append(self)
 
+@classmethod
+def user_exists(cls,number)
+    '''
+    checks if user exits from the user list
+    '''
+    for user in cls.user_list:
+        if user.phone_number == number:
+            return True
+
+    return False        
