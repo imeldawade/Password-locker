@@ -24,7 +24,16 @@ class TestUser(unittest.TestCase):
         test case to test if the save function works
         '''
         self.new_user.save_user()
-        self.assertEqual(len(User.user_list),1)     
+        self.assertEqual(len(User.user_list),1)
+
+    def test_save_multiple_user(self):
+        '''
+        test to check whether we saved multiple user objects to our user_list
+        '''
+        self.new_user.save_user()
+        test_user = User("Test", "user","0712345678", "test@user.com")
+        test_user.save_user()
+        self.assertEqual(len(User.user_list)2)
  
 
  
