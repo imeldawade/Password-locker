@@ -7,7 +7,7 @@ class TestUser(unittest.TestCase):
         '''
         test runs before each test cases
         '''
-        self.new_user = User("Imelda", "wade", "0712345678", "wade@user.com",)
+        self.new_user = User("Imelda", "Wade", "0712345678", "wade@user.com",)
 
     def test_init(self):
          '''
@@ -33,7 +33,7 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user = User("Test", "user","0712345678", "test@user.com")
         test_user.save_user()
-        self.assertEqual(len(User.user_list)2)
+        self.assertEqual(len(User.user_list),2)
 
     def tearDown(self):
         '''
@@ -48,7 +48,7 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user = User("Test", "user", "0712345678", "test@user.com")
         test_user.save_user()
-        self.assertEqual(len(User.user_list)2)
+        self.assertEqual(len(User.user_list),2)
 
     def test_delete_user(self):
         '''
@@ -81,7 +81,7 @@ class TestUser(unittest.TestCase):
         found_user = User.find_by_number("0111222333")
         self.assertEqual(found_user.email,test_user.email)
 
-    def test_contact_exists(self):
+    def test_user_exists(self):
         '''
         checks if a user exists from the user_list
         '''
@@ -95,6 +95,8 @@ class TestUser(unittest.TestCase):
         '''
         returns a list of all users saved
         '''
-        self.assertEqual(User.display_users(),User.user_list)
-               
+        self.assertEqual(User.display_user(),User.user_list)
+
+if __name__ == '__main__':
+    unittest.main()
 

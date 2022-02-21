@@ -40,4 +40,11 @@ def user_exist(cls,number):
         if user.phone_number == number:
             return True
 
-    return False        
+    return False 
+
+@classmethod
+def display_users(cls):
+    '''
+    returns the user list
+    '''
+    return cls.user_list
