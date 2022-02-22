@@ -1,0 +1,10 @@
+from user import User
+
+def create_user(fname, lname, phone, email):
+    '''
+    Function to create a new user
+    '''
+    new_user = User(fname, lname, phone, email)
+    return new_user
+
+    
