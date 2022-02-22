@@ -21,9 +21,16 @@ def del_user(user):
 
 def find_user(user):
     '''
-    Functions that finds user by number and returns the user
+    Functions that takes in a number and calls the user class method
     '''    
     return User.find_by_number(number)
+
+def check_existing_users(number):
+    '''
+    Function that checks if a user exists with that number
+    '''    
+    return User.user_exist(number)
+    
 
     
     
