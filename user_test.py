@@ -1,7 +1,12 @@
-import unittest
 from user import User
+import unittest
 
 class TestUser(unittest.TestCase):
+    def tearDown(self):
+        '''
+        cleans up after each test case has run
+        '''
+        User.user_list = []
 
     def setUp(self):
         '''
@@ -16,7 +21,7 @@ class TestUser(unittest.TestCase):
 
          self.assertEqual(self.new_user.first_name,"Imelda")
          self.assertEqual(self.new_user.last_name,"Wade")
-         self.assertEqual(self.new_user.phone_number,"0712345678")
+         self.assertEqual(self.new_user.phone_number, "0712345678")
          self.assertEqual(self.new_user.email,"wade@user.com")
 
     def test_save_user(self):
@@ -35,11 +40,6 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
-    def tearDown(self):
-        '''
-        cleans up after each test case has run
-        '''
-        User.user_list = []
 
     def test_save_multiple_user(self):
         '''
@@ -73,7 +73,7 @@ class TestUser(unittest.TestCase):
         checks if we can find user by phone number and display information
         '''
 
-        self.new_User.save_user()
+        self.new_user.save_user()
         test_user = User("Test","user","0111222333", "test@user.com")
         test_user.save_user()
 
@@ -81,21 +81,21 @@ class TestUser(unittest.TestCase):
         found_user = User.find_by_number("0111222333")
         self.assertEqual(found_user.email,test_user.email)
 
-    def test_user_exists(self):
-        '''
-        checks if a user exists from the user_list
-        '''
-        for user in cls.user_list:
-            if user.phone_number == number:
-                return True
+    # def test_user_exists(self):
+    #     '''
+    #     checks if a user exists from the user_list
+    #     '''
+    #     for user in cls.user_list:
+    #         if user.phone_number == number:
+    #             return True
 
-        return False
+    #     return False
 
-    def test_display_all_users(self):
+    def test_display_all_user(self):
         '''
         returns a list of all users saved
         '''
-        self.assertEqual(User.display_user(),User.user_list)
+        self.assertEqual(User.display_users(),User.user_list)
 
 if __name__ == '__main__':
     unittest.main()

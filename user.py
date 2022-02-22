@@ -2,9 +2,6 @@ class User:
     '''
      Class that generates new instances of users
     '''
-
-    pass
-
     def __init__(self,first_name,last_name,phone_number,email):
 
         self.first_name = first_name
@@ -12,39 +9,47 @@ class User:
         self.phone_number = phone_number
         self.email = email
 
-user_list = []
+    user_list = []
 
-def save_user(self):
+    def save_user(self):
 
-    '''
-    save_user method saves user objects into user_list
-    '''
+        '''
+        save_user method saves user objects into user_list
+        '''
+        User.user_list.append(self)
 
-    User.user_list.append(self)
 
-@classmethod
-def find_by_number(cls,number):
-    '''
-    takes in a number and returns a user that matches number
-    '''
-    for user in cls.user_list:
-        if user.phone_number == number:
-            return user
+    def delete_user(self):
 
-@classmethod
-def user_exist(cls,number):
-    '''
-    checks if a user exists from the user list
-    '''
-    for user in cls.user_list:
-        if user.phone_number == number:
-            return True
+        '''
+        deletes a selected user
+        '''
+        User.user_list.remove(self)
+            
 
-    return False 
+    @classmethod
+    def find_by_number(cls,number):
+        '''
+        takes in a number and returns a user that matches number
+        '''
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return user
 
-@classmethod
-def display_users(cls):
-    '''
-    returns the user list
-    '''
-    return cls.user_list
+    @classmethod
+    def user_exist(cls,number):
+        '''
+        checks if a user exists from the user list
+        '''
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return True
+
+        return False 
+
+    @classmethod
+    def display_users(cls):
+        '''
+        returns the user list
+        '''
+        return cls.user_list
