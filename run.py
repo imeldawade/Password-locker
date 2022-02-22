@@ -51,7 +51,7 @@ def main():
     print('\n')
 
     while True:
-            print("Use these numbers : 1 - create a new password, 2 - display passwords, 3 - Delete password, 4 -exit password list ")
+            print("Use these numbers : 1 - create a new password, 2 - display passwords, 3 - Delete password, 4 -exit password list, 5- Login 2 ")
 
             numbers = input().lower()
 
@@ -70,6 +70,10 @@ def main():
 
                 save_site(create_user(account, user_name, password))
                 print("Account created successfully")
+                print("_"*10)
+                print(f" Account:{account}\nUsername:{user_name}\nPassword:{password}")
+                print("Login to your account")
+
 
                 
 
