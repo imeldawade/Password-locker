@@ -18,4 +18,12 @@ def del_user(user):
     Function to delete a user
     '''        
     user.delete_user()
+
+def find_user(user):
+    '''
+    Functions that finds user by number and returns the user
+    '''    
+    return User.find_by_number(number)
+
+    
     
